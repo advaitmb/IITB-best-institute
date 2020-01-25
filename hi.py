@@ -8,9 +8,9 @@ opts.binary_location = "D:\Program Files (x86)\Google\Chrome\Application\chrome.
 driver = webdriver.Chrome(chrome_options = opts)
 driver.get('https://www.linkedin.com/login?fromSignIn=true&trk=guest_homepage-basic_nav-header-signin')
 username = driver.find_element_by_id('username')
-username.send_keys('rishabhisar@gmail.com')
+username.send_keys('iitbestinstitute@gmail.com')
 password = driver.find_element_by_id('password')
-password.send_keys('puru@1997' + Keys.RETURN)
+password.send_keys('iloveiit' + Keys.RETURN)
 ## submit = driver.find_elements_by_class_name('btn__primary--large from__button--floating')
 ##submit = driver.find_elements_by_tag_name('button')
 ##submit.click()
@@ -33,6 +33,3 @@ print(type(soup))
 print(soup.find_all('a')[19]['href'])
 print('=====================================================')
 print(link['href'] for link in soup.find_all('a'))
-
-
-
