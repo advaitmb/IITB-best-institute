@@ -5,8 +5,8 @@ from selenium.webdriver.common.keys import Keys
 import time
 opts = webdriver.ChromeOptions()
 opts.binary_location = "D:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
-prefs = {"profile.managed_default_content_settings.images": 2}
-opts.add_experimental_option("prefs", prefs)
+##prefs = {"profile.managed_default_content_settings.images": 2}
+##opts.add_experimental_option("prefs", prefs)
 driver = webdriver.Chrome(chrome_options = opts)
 
 driver.get('https://www.linkedin.com/login?fromSignIn=true&trk=guest_homepage-basic_nav-header-signin')
@@ -25,7 +25,8 @@ time.sleep(5)
 # Get scroll height
 last_height = driver.execute_script("return document.body.scrollHeight")
 
-while True:
+##while True:
+for i in range(1,20):
     # Scroll down to bottom
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight+1000);")
 
