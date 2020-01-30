@@ -1,4 +1,4 @@
-print(2+2)
+print("Starting stuff")
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -10,7 +10,7 @@ import pandas
 ##Link list
 list_link = []
 
-seconds = 5 + (random.random() * 2)
+seconds = 3 + (random.random() * 2)
 
 ##Initiate Chrome for Linkedin login
 opts = webdriver.ChromeOptions()
@@ -23,11 +23,11 @@ driver.get('https://www.linkedin.com/login?fromSignIn=true&trk=guest_homepage-ba
 
 ##username
 username = driver.find_element_by_id('username')
-username.send_keys('rishabhisar@gmail.com')
+username.send_keys('iitbestinstitute@gmail.com')
 
 ##password
 password = driver.find_element_by_id('password')
-password.send_keys('puru@1997' + Keys.RETURN)
+password.send_keys('iloveiit' + Keys.RETURN)
 
 ## submit = driver.find_elements_by_class_name('btn__primary--large from__button--floating')
 ##submit = driver.find_elements_by_tag_name('button')
@@ -41,7 +41,7 @@ time.sleep(5)
 last_height = driver.execute_script("return document.body.scrollHeight")
 
 ##while True:
-for i in range(1,5):
+for i in range(1,10):
     # Scroll down to bottom
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight+1000);")
 
