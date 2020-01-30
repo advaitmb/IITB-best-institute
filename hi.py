@@ -10,7 +10,7 @@ import pandas
 ##Link list
 list_link = []
 
-seconds = 3 + (random.random() * 2)
+seconds = 2 + (random.random() * 2)
 
 ##Initiate Chrome for Linkedin login
 opts = webdriver.ChromeOptions()
@@ -23,11 +23,14 @@ driver.get('https://www.linkedin.com/login?fromSignIn=true&trk=guest_homepage-ba
 
 ##username
 username = driver.find_element_by_id('username')
-username.send_keys('iitbestinstitute@gmail.com')
+# username.send_keys('iitbestinstitute@gmail.com')
+username.send_keys('rishabhisar@gmail.com')
 
 ##password
 password = driver.find_element_by_id('password')
-password.send_keys('iloveiit' + Keys.RETURN)
+# password.send_keys('iloveiit' + Keys.RETURN)
+password.send_keys('puru@1997' + Keys.RETURN)
+
 
 ## submit = driver.find_elements_by_class_name('btn__primary--large from__button--floating')
 ##submit = driver.find_elements_by_tag_name('button')
@@ -39,22 +42,47 @@ time.sleep(5)
 
 # Get scroll height
 last_height = driver.execute_script("return document.body.scrollHeight")
+i=0
+t=0
 
-##while True:
-for i in range(1,10):
-    # Scroll down to bottom
+# while True:
+# ##for i in range(1,10):
+#     start = time.time()
+#     # Scroll down to bottom
+#     driver.execute_script("window.scrollTo(0, document.body.scrollHeight+1000);")
+
+#     # Wait to load page
+#     time.sleep(seconds)
+
+#     #print continuing statement
+#     print("Scroll Number: " + str(i))
+#     i=i+1
+
+#     # Calculate new scroll height and compare with last scroll height
+#     new_height = driver.execute_script("return document.body.scrollHeight")
+    
+#     end = time.time()
+#     t= end - start
+
+#     print(t)
+
+#     if new_height == last_height and t > 30 :
+#         break
+#     last_height = new_height
+    
+#     t=0
+while True:
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight+1000);")
 
-    # Wait to load page
-    time.sleep(seconds)
+    print("Scroll Number: " + str(i))
+    i=i+1
 
-    # Calculate new scroll height and compare with last scroll height
     new_height = driver.execute_script("return document.body.scrollHeight")
-    if new_height == last_height:
-        break
-    last_height = new_height
-
-
+    while new_height == last_height:
+        new_height = driver.execute_script("return document.body.scrollHeight")
+        time.sleep(random.random())      
+    last_height = driver.execute_script("return document.body.scrollHeight")
+     
 
 ##============THIS PART PARSES THE PAGE AND PRINTS OT THE LINKS===============================
 
@@ -76,7 +104,7 @@ print(items[20]['href'])
 print('=====================================================')
 for link in items:
     bla = link['href']
-    print(bla)
+    ##print(bla)
     list_link.append(bla)
 
 
